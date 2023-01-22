@@ -1,4 +1,5 @@
 import type { FastifyPluginAsyncJsonSchemaToTs } from "@fastify/type-provider-json-schema-to-ts";
+import { prisma } from "../../prisma.js";
 
 export const healthRoutes: FastifyPluginAsyncJsonSchemaToTs = async (
   fastify
@@ -16,6 +17,11 @@ export const healthRoutes: FastifyPluginAsyncJsonSchemaToTs = async (
   } as const;
 
   fastify.get("/", { schema }, async () => {
-    return { healthy: true };
+    try {
+      await prisma.$queryRaw`SELECT 1`;
+      return { healthy: true };
+    } catch (err) {
+      return { healthy: false };
+    }
   });
 };
