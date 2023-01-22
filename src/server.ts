@@ -1,6 +1,7 @@
 import { fastify } from "fastify";
 
 import * as env from "./env.js";
+import { prisma } from "./prisma.js";
 import { apiRoutes } from "./routes/apiRoutes.js";
 
 export const createServer = async () => {
@@ -16,7 +17,7 @@ export const createServer = async () => {
     },
     shutdown: async (): Promise<void> => {
       console.log("SERVER: shutdown started");
-      await server.close();
+      await Promise.allSettled([server.close(), prisma.$disconnect()]);
       console.log("SERVER: shutdown done");
     },
   };
