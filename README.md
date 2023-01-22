@@ -18,3 +18,7 @@ npm run start
 # To run in development
 npm run watch
 ```
+
+## API Docs
+
+Check `/docs` in your server for Swagger docs

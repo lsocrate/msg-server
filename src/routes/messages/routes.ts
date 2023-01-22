@@ -109,6 +109,7 @@ const deleteMessage: FastifyPluginAsyncJsonSchemaToTs = async (fastify) => {
         id: { type: "integer" },
       },
     },
+    response: { 204: { type: "null" } },
   } as const;
 
   fastify.delete("/:id", { schema }, async (req, reply) => {
@@ -126,6 +127,7 @@ const deleteQuery: FastifyPluginAsyncJsonSchemaToTs = async (fastify) => {
         ids: { type: "string" },
       },
     },
+    response: { 204: { type: "null" } },
   } as const;
 
   fastify.delete("/", { schema }, async (req, reply) => {
