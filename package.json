@@ -1,0 +1,38 @@
+{
+  "name": "msg-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "lint:codestyle": "prettier --check src",
+    "test": "ava dist",
+    "test:watch": "ava dist --watch",
+    "start": "node dist/main.js",
+    "watch": "concurrently \"npm:watch:*\"",
+    "watch:js": "node --require dotenv/config --watch dist/main.js",
+    "watch:ts": "tsc --watch"
+  },
+  "author": "Luiz Socrate <luiz@socrate.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "ava": "^5.1.0",
+    "fastify": "^4.10.2",
+    "fastify-plugin": "^4.4.0",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@fastify/type-provider-json-schema-to-ts": "^2.2.0",
+    "@types/node": "^18.11.16",
+    "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.2.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

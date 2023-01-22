@@ -1,0 +1,8 @@
+# PERSONALIZATION
+.env
+
+# NODE THINGS
+node_modules
+
+# COMPILED OUTPUT
+dist

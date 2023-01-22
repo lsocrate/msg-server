@@ -1,0 +1,12 @@
+{
+  "include": ["src/main.ts", "src/**/*.test.ts"],
+  "compilerOptions": {
+    "incremental": true,
+    "module": "ES2022",
+    "moduleResolution": "nodenext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2022"
+  }
+}
