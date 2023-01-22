@@ -10,4 +10,11 @@ npm install
 
 # Prepare your database
 npm run migrate
+
+# To run as in production
+npm run build
+npm run start
+
+# To run in development
+npm run watch
 ```
